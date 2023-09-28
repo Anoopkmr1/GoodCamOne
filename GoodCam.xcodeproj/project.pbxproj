@@ -14,6 +14,10 @@
 		6E6BA68E2AC477C0004CCC55 /* GoodCam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BA68C2AC477C0004CCC55 /* GoodCam.xcdatamodeld */; };
 		6E6BA6902AC477C1004CCC55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BA68F2AC477C1004CCC55 /* Assets.xcassets */; };
 		6E6BA6932AC477C1004CCC55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BA6912AC477C1004CCC55 /* LaunchScreen.storyboard */; };
+		6E6BA69C2AC54280004CCC55 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BA69B2AC54280004CCC55 /* FilterViewController.swift */; };
+		6E6BA69E2AC5429D004CCC55 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BA69D2AC5429D004CCC55 /* PhotoCollectionViewController.swift */; };
+		6E6BA6A12AC54545004CCC55 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BA6A02AC54545004CCC55 /* ExtensionViewController.swift */; };
+		6E6BA6A42AC550A4004CCC55 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BA6A32AC550A4004CCC55 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		6E6BA68F2AC477C1004CCC55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E6BA6922AC477C1004CCC55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E6BA6942AC477C1004CCC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E6BA69B2AC54280004CCC55 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		6E6BA69D2AC5429D004CCC55 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		6E6BA6A02AC54545004CCC55 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
+		6E6BA6A32AC550A4004CCC55 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +66,11 @@
 		6E6BA6822AC477C0004CCC55 /* GoodCam */ = {
 			isa = PBXGroup;
 			children = (
+				6E6BA6A22AC55086004CCC55 /* CollectionCell */,
+				6E6BA69F2AC54513004CCC55 /* UIViewController+Extensions */,
+				6E6BA69A2AC54265004CCC55 /* Controllers */,
 				6E6BA6832AC477C0004CCC55 /* AppDelegate.swift */,
 				6E6BA6852AC477C0004CCC55 /* SceneDelegate.swift */,
-				6E6BA6872AC477C0004CCC55 /* ViewController.swift */,
 				6E6BA6892AC477C0004CCC55 /* Main.storyboard */,
 				6E6BA68F2AC477C1004CCC55 /* Assets.xcassets */,
 				6E6BA6912AC477C1004CCC55 /* LaunchScreen.storyboard */,
@@ -68,6 +78,32 @@
 				6E6BA68C2AC477C0004CCC55 /* GoodCam.xcdatamodeld */,
 			);
 			path = GoodCam;
+			sourceTree = "<group>";
+		};
+		6E6BA69A2AC54265004CCC55 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E6BA6872AC477C0004CCC55 /* ViewController.swift */,
+				6E6BA69B2AC54280004CCC55 /* FilterViewController.swift */,
+				6E6BA69D2AC5429D004CCC55 /* PhotoCollectionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6E6BA69F2AC54513004CCC55 /* UIViewController+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6E6BA6A02AC54545004CCC55 /* ExtensionViewController.swift */,
+			);
+			path = "UIViewController+Extensions";
+			sourceTree = "<group>";
+		};
+		6E6BA6A22AC55086004CCC55 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				6E6BA6A32AC550A4004CCC55 /* CollectionViewCell.swift */,
+			);
+			path = CollectionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E6BA6882AC477C0004CCC55 /* ViewController.swift in Sources */,
+				6E6BA69E2AC5429D004CCC55 /* PhotoCollectionViewController.swift in Sources */,
+				6E6BA6A42AC550A4004CCC55 /* CollectionViewCell.swift in Sources */,
 				6E6BA6842AC477C0004CCC55 /* AppDelegate.swift in Sources */,
 				6E6BA68E2AC477C0004CCC55 /* GoodCam.xcdatamodeld in Sources */,
 				6E6BA6862AC477C0004CCC55 /* SceneDelegate.swift in Sources */,
+				6E6BA69C2AC54280004CCC55 /* FilterViewController.swift in Sources */,
+				6E6BA6A12AC54545004CCC55 /* ExtensionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2UMVKA3VBA;
+				DEVELOPMENT_TEAM = 7FR7T98PVQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodCam/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -299,6 +339,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,7 +360,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2UMVKA3VBA;
+				DEVELOPMENT_TEAM = 7FR7T98PVQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodCam/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -327,6 +368,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
