@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ahq-cU-c92">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoodCam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6y-NS-6Aw">
-                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <connections>
                                     <segue destination="46F-nY-O0L" kind="embed" id="Q0f-LE-kE8"/>
                                 </connections>
@@ -47,42 +47,94 @@
             <point key="canvasLocation" x="1066.1538461538462" y="3.5545023696682461"/>
         </scene>
         <!--Filter View Controller-->
-        <scene sceneID="kkm-Z1-A6I">
+        <scene sceneID="iZi-y8-sT5">
             <objects>
-                <viewController storyboardIdentifier="FilterViewController" id="1QE-0i-jSI" customClass="FilterViewController" customModule="GoodCam" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="suR-Wy-zZZ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                <viewController storyboardIdentifier="FilterViewController" id="wim-bZ-vR3" customClass="FilterViewController" customModule="GoodCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e7W-c4-luj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="5aB-pd-GxI"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npp-Do-zOJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="Fx9-uV-oHa"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HF3-yu-WfF"/>
+                                    <barButtonItem title="Done" id="HSv-dY-qEW"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7HP-cB-TGm">
+                                <rect key="frame" x="0.0" y="103" width="393" height="639"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27e-bj-vWN" customClass="FiltersScrollView" customModule="GoodCam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="710.33333333333337" width="393" height="127.66666666666663"/>
+                                <color key="backgroundColor" red="1" green="0.12682218949999999" blue="0.18703302329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Axb-0U-gX4"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Npp-Do-zOJ" firstAttribute="leading" secondItem="Axb-0U-gX4" secondAttribute="leading" id="1Qe-te-rqI"/>
+                            <constraint firstItem="7HP-cB-TGm" firstAttribute="leading" secondItem="Axb-0U-gX4" secondAttribute="leading" id="Aer-Hk-poV"/>
+                            <constraint firstItem="7HP-cB-TGm" firstAttribute="top" secondItem="Npp-Do-zOJ" secondAttribute="bottom" id="FGB-hT-PDR"/>
+                            <constraint firstItem="7HP-cB-TGm" firstAttribute="width" secondItem="e7W-c4-luj" secondAttribute="width" id="Gds-oK-dy4"/>
+                            <constraint firstItem="27e-bj-vWN" firstAttribute="width" secondItem="e7W-c4-luj" secondAttribute="width" id="Gg2-1C-NBv"/>
+                            <constraint firstItem="Npp-Do-zOJ" firstAttribute="top" secondItem="Axb-0U-gX4" secondAttribute="top" id="URW-ME-u2w"/>
+                            <constraint firstItem="Npp-Do-zOJ" firstAttribute="trailing" secondItem="Axb-0U-gX4" secondAttribute="trailing" id="XgN-Lb-U9s"/>
+                            <constraint firstItem="27e-bj-vWN" firstAttribute="leading" secondItem="Axb-0U-gX4" secondAttribute="leading" id="dWC-GJ-RWJ"/>
+                            <constraint firstItem="7HP-cB-TGm" firstAttribute="height" secondItem="e7W-c4-luj" secondAttribute="height" multiplier="0.75" id="ldw-CI-XuS"/>
+                            <constraint firstItem="27e-bj-vWN" firstAttribute="bottom" secondItem="Axb-0U-gX4" secondAttribute="bottom" constant="20" id="pWS-HK-zFw"/>
+                            <constraint firstItem="27e-bj-vWN" firstAttribute="height" secondItem="e7W-c4-luj" secondAttribute="height" multiplier="0.15" id="upH-Ls-5xz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="filterImageView" destination="7HP-cB-TGm" id="BhL-ud-u2b"/>
+                        <outlet property="filterScrollView" destination="27e-bj-vWN" id="7e0-Bd-y2a"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5hU-Gg-2UD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qzl-qe-qfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="-709"/>
+            <point key="canvasLocation" x="954.96183206106866" y="-709.15492957746483"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Photo Collection View Controller-->
         <scene sceneID="MdC-Fa-RW5">
             <objects>
-                <collectionViewController id="46F-nY-O0L" sceneMemberID="viewController">
+                <collectionViewController id="46F-nY-O0L" customClass="PhotoCollectionViewController" customModule="GoodCam" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gnP-gO-M3i">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="719"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="linkColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5n2-rt-0rh">
-                            <size key="itemSize" width="100" height="100"/>
+                            <size key="itemSize" width="300" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fgT-gb-Y76">
-                                <rect key="frame" x="10" y="10" width="100" height="100"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="fgT-gb-Y76" customClass="PhotoCollectionViewCell" customModule="GoodCam" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0XG-6z-tSg">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rqb-3J-Z2G">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="K63-qH-SxA"/>
+                                                <constraint firstAttribute="width" constant="150" id="Ov5-KV-072"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="rqb-3J-Z2G" secondAttribute="trailing" id="4bd-Vm-S3L"/>
+                                        <constraint firstItem="rqb-3J-Z2G" firstAttribute="top" secondItem="0XG-6z-tSg" secondAttribute="top" id="KDB-xP-L9c"/>
+                                        <constraint firstItem="rqb-3J-Z2G" firstAttribute="leading" secondItem="0XG-6z-tSg" secondAttribute="leading" id="YW9-DN-Y5h"/>
+                                        <constraint firstAttribute="bottom" secondItem="rqb-3J-Z2G" secondAttribute="bottom" id="idh-J5-6hF"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="photoImageView" destination="rqb-3J-Z2G" id="2tT-Vi-Z3d"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -101,7 +153,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ahq-cU-c92" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="whT-fB-jAm">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -113,6 +165,35 @@
             </objects>
             <point key="canvasLocation" x="136.92307692307691" y="3.5545023696682461"/>
         </scene>
+        <!--Photo Preview View Controller-->
+        <scene sceneID="YHu-ox-VTf">
+            <objects>
+                <viewController storyboardIdentifier="PhotoPreviewViewController" id="DA7-ZD-4pT" customClass="PhotoPreviewViewController" customModule="GoodCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1f0-XX-qKb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AE3-jV-iac">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fbS-fN-bcd"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="fbS-fN-bcd" firstAttribute="bottom" secondItem="AE3-jV-iac" secondAttribute="bottom" id="AUu-MF-vu5"/>
+                            <constraint firstItem="AE3-jV-iac" firstAttribute="leading" secondItem="fbS-fN-bcd" secondAttribute="leading" id="Ht0-Dz-9R9"/>
+                            <constraint firstItem="AE3-jV-iac" firstAttribute="top" secondItem="fbS-fN-bcd" secondAttribute="top" id="XwD-ro-m1k"/>
+                            <constraint firstItem="fbS-fN-bcd" firstAttribute="trailing" secondItem="AE3-jV-iac" secondAttribute="trailing" id="ssK-eJ-R62"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoPreviewImg" destination="AE3-jV-iac" id="V3g-O1-q6e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EI9-wJ-ymh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="-709"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="linkColor">
@@ -121,8 +202,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

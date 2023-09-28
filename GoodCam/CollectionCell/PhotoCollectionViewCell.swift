@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var photoImage: UIImage?
+class PhotoCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var photoImageView: UIImageView!
+
     
 }
