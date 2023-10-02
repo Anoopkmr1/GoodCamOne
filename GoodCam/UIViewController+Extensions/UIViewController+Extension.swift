@@ -13,7 +13,7 @@ extension UIViewController {
     func addChildVC(_ childVC: UIViewController) {
         self.addChild(childVC)
         childVC.view.frame = self.view.frame
-        view.addSubview(childVC.view)
+        self.view.addSubview(childVC.view)
         childVC.didMove(toParent: self)
     }
 }

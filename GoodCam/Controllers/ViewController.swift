@@ -7,15 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, PhotoCollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, PhotoCollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+, PhotoFilterViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guard let photoCVC = self.children.first as? PhotoCollectionViewController else {
             return
         }
         photoCVC.delegate = self
+        
+        
     }
 
     
@@ -37,15 +39,16 @@ class ViewController: UIViewController, PhotoCollectionViewDelegate, UIImagePick
     }
     
     func didSetImage(_ image: UIImage) {
+        // used to pass the image to the PreviewVC
         showPreviewImage(previewImage: image)
     }
     
 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        showFilterVC(for: image!)
-        picker.dismiss(animated: true)
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        showFilterVC(for: image)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -57,9 +60,31 @@ class ViewController: UIViewController, PhotoCollectionViewDelegate, UIImagePick
         guard let filter = self.storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as? FilterViewController else {
             return
         }
-        filter.filterImage = image
+        filter.filterImage = image 
         self.addChildVC(filter)
     }
+    
+    func photoFilterDone() {
+        showPhotosList()
+    }
+    
+    func photoFilterCancel() {
+        showPhotosList()
+    }
+    
+    private func showPhotosList() {
+        self.view.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+        view.removeFromSuperview()
+        guard let photoListCVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoListCollectionViewController") as? PhotoCollectionViewController else {
+            fatalError("PhotoListCollectionViewController does not exist")
+        }
+        photoListCVC.delegate = self
+        self.addChildVC(photoListCVC)
+        
+    }
+
 
 }
 

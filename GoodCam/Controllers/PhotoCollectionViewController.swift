@@ -24,6 +24,7 @@ class PhotoCollectionViewController: UICollectionViewController {
     }
     
     private func requestPermission(completion:@escaping(PHAuthorizationStatus) -> ()) {
+       //responsible for accessing the user's library
         PHPhotoLibrary.requestAuthorization { status in
             DispatchQueue.main.async {
                 print("Success")
@@ -37,8 +38,11 @@ class PhotoCollectionViewController: UICollectionViewController {
             if status == .authorized {
                 print("Authorized")
                 let fetchOptions = PHFetchOptions()
+                //used to retrieve the assests of media type
                 let assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+                print("Anoop_assets:\(assets)")
                 assets.enumerateObjects { object, count , stop in
+                    print("Anoop_assestsObject:\(object)")
                     self.imageCollection.append(object)
                 }
                 self.imageCollection.reverse()
@@ -54,10 +58,12 @@ class PhotoCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as? PhotoCollectionViewCell
         let assets = self.imageCollection[indexPath.row]
         let manager = PHImageManager.default()
-        manager.requestImage(for: assets, targetSize: CGSize(width: 150, height: 150), contentMode: .aspectFill, options: nil) { images, _ in
+        //uses to represent the image with the specified assest
+        manager.requestImage(for: assets, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil) { images, _ in
             DispatchQueue.main.async{
                 cell?.photoImageView.image = images
             }
@@ -70,8 +76,10 @@ class PhotoCollectionViewController: UICollectionViewController {
         let assest = self.imageCollection[indexPath.row]
         let manager = PHImageManager.default()
         let options = PHImageRequestOptions()
-        manager.requestImage(for: assest, targetSize: CGSize(width: 320, height: 320), contentMode: .aspectFill, options: options) { images, _ in
+        options.isSynchronous = true
+        manager.requestImage(for: assest, targetSize: CGSize(width: 320, height: 450), contentMode: .aspectFill, options: options) { images, _ in
             if let image = images {
+                // used to pass the image to the previewVC
                 self.delegate?.didSetImage(image)
             }
           

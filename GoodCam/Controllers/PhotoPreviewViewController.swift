@@ -14,8 +14,7 @@ class PhotoPreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        photoPreviewImg.image = imageView
+        self.photoPreviewImg.image = imageView
     }
 
 }
