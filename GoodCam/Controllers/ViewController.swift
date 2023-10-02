@@ -9,17 +9,15 @@ import UIKit
 
 class ViewController: UIViewController, PhotoCollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 , PhotoFilterViewControllerDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let photoCVC = self.children.first as? PhotoCollectionViewController else {
             return
         }
         photoCVC.delegate = self
-        
-        
     }
-
+    
     
     @IBAction func cameraBtnClk(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -43,7 +41,7 @@ class ViewController: UIViewController, PhotoCollectionViewDelegate, UIImagePick
         showPreviewImage(previewImage: image)
     }
     
-
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
@@ -60,7 +58,8 @@ class ViewController: UIViewController, PhotoCollectionViewDelegate, UIImagePick
         guard let filter = self.storyboard?.instantiateViewController(withIdentifier: "FilterViewController") as? FilterViewController else {
             return
         }
-        filter.filterImage = image 
+        filter.filterImage = image
+        filter.delegate = self
         self.addChildVC(filter)
     }
     
@@ -76,15 +75,13 @@ class ViewController: UIViewController, PhotoCollectionViewDelegate, UIImagePick
         self.view.subviews.forEach {
             $0.removeFromSuperview()
         }
-        view.removeFromSuperview()
-        guard let photoListCVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoListCollectionViewController") as? PhotoCollectionViewController else {
+        guard let photoListCVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoCollectionViewController") as? PhotoCollectionViewController else {
             fatalError("PhotoListCollectionViewController does not exist")
         }
         photoListCVC.delegate = self
         self.addChildVC(photoListCVC)
-        
     }
-
-
+    
+    
 }
 
